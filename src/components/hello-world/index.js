@@ -4,7 +4,9 @@ import Home from "../home_page";
 import Profile from "../profile";
 import "./style.scss";
 
+
 export default class App extends Component {
+
   render(props) {
     return (
     <div>
