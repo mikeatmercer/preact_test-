@@ -19,10 +19,8 @@ export default class App extends Component {
     <div>
     <Subscribe to={[TestContainer]}>
       {test => (
-        <div>
-        <div>
-        {test.state.testValue}
-      </div>
+
+  
         <HashRouter>
           
         <div>
@@ -30,7 +28,7 @@ export default class App extends Component {
          <Route fakeValue={"fake Value"} testValue={test.state.testValue} exact path="/profile" component={Profile} />
        </div>
         </HashRouter> 
-        </div>
+
       )}
 
     </Subscribe>
