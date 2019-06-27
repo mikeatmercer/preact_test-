@@ -22,7 +22,7 @@ export default class listTest extends Component {
                   
                   var results = [];
                   var objectChecker = ["Client_x0020_Needs", "Countries", "Regions","ClientType", "Businesses","Countries" ];
-                  
+               
                 data.d.results.forEach( e => {
                     //console.log(e);
                     if(e.Keywords !== null) {
@@ -35,10 +35,16 @@ export default class listTest extends Component {
                             
                         });
                     }
+                    if(e.NavigateURL && e.NavigateURL.Description) {
+                        let trim = e.NavigateURL.Description.trim();
+                        if(this.dupCheck(results, trim )) {
+                            results.push({label:trim, url: e.NavigateURL.Url});
+                        }
+                    }
                     objectChecker.forEach(o =>{
                         e[o].results.forEach(e => {
                             if(this.dupCheck(results, e.Label)){
-                                results.push({label: e.Label, url: "http://google.com/"+e.Label});
+                                results.push({label: e.Label, url: `http://google.com/${o}/${e.Label}/`});
                             }
                         })
                     })
