@@ -5,7 +5,9 @@ import habitat from "preact-habitat";
 
 import Widget from "./components/hello-world";
 
-let _habitat = habitat(Widget);
+import searchTest from "./components/autocomplete-test.js";
+
+let _habitat = habitat(searchTest);
 
 _habitat.render({
   selector: '[data-widget-host="habitat"]',
